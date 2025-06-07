@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+
 import Link from 'next/link';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
@@ -8,9 +8,7 @@ export default function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Link passHref href="/" className='navbar-brand'>
-         CHANGE ME
-        </Link>
+        <Link passHref href="/images" className="navbar-brand" />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -18,10 +16,18 @@ export default function NavBar() {
             <Link className="nav-link" href="/">
               Home
             </Link>
+
+            <Link className="nav-link" href="/item-creation">
+              Smithy
+            </Link>
+
+            <Link className="nav-link" href="/shop-creation">
+              Merchant&apos;s Guild
+            </Link>
           </Nav>
 
           <Button variant="danger" onClick={signOut}>
-              Sign Out
+            Sign Out
           </Button>
         </Navbar.Collapse>
       </Container>
